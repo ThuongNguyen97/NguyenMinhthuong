@@ -1,0 +1,10 @@
+﻿model IEnumerable<QLBanSach.DAO.CHUDE>
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SanPhamTheoChuDe","BookStore",new {  id = item.MaCD})" class="list-group-item">
+            <li>
+                @item.TenChuDe
+            </li>
+        </a>
+
+    }

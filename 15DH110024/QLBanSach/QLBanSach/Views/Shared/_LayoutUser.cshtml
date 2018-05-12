@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <script src="~/Scripts/functions.js"></script>
+    <script src="~/Scripts/jquery-1.6.2.min.js"></script>
+    <script src="~/Scripts/jquery.jcarousel.min.js"></script>
+    <script src="~/Scripts/png-fix.js"></script>
+    @*<link href="~/Content/main.css" rel="stylesheet" />*@
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <h3 style="text-align:center">15DH110024-Nguyễn Minh Thường</h3>
+    <div id="header" class="shell">
+        <div id="logo"><h1><a href="#">BestSeller</a></h1></div>
+        <!-- Navigation -->
+        <div id="navigation">
+            <ul>
+                @*<li><a href="#" class="active">Home</a></li>*@
+                @Html.ActionLink("Trang chủ","Index","BookStore")
+                <li>@Html.Action("GiohangPartial","GioHang")</li>
+                @Html.ActionLink("Log out", "Logout", "NguoiDung")
+                @Html.Action("XinChao", "NguoiDung")
+            </ul>
+        </div>
+        <!-- End Navigation -->
+        <div class="cl">&nbsp;</div>
+        <!-- Login-details -->
+        <div id="login-details">
+            <p>Welcome, <a href="#" id="user"></a></p><p><a href="#" class="cart"><img src="css/images/cart-icon.png" alt="" /></a>Shopping Cart (0) <a href="#" class="sum">$0.00</a></p>
+        </div>
+
+        <!-- End Login-details -->
+    </div>
+    <!-- End Header -->
+    <!-- Slider -->
+    <div id="slider">
+        <div class="shell"   style="background-image: url(~/images/slider-bg.png)">
+           
+                
+                    <div class="image">
+                        <img src="~/css/images/books.png" alt="" />
+                    </div>
+                    <div class="details">
+                        <h2>Bestsellers</h2>
+                        <h3>Special Offers</h3>
+                        <p class="title">Pellentesque congue lorem quis massa blandit non pretium nisi pharetra</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id odio in tortor scelerisque dictum. Phasellus varius sem sit amet metus volutpat vel vehicula nunc lacinia.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                <
+               
+        </div>
+    </div>
+    <!-- End Slider -->
+    <!-- Main -->
+    <div id="main" class="shell">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <ul class="categories">
+                <li>
+                    <h4>Chủ Đề Sách</h4>
+                    <ul>
+                        @Html.Action("ChuDe","BookStore")
+
+                    </ul>
+                </li>
+                <li>
+                    <h4>Nhà Xuất Bản</h4>   
+                    <ul>
+                        @Html.Action("NhaXuatBan", "BookStore")
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- End Sidebar -->
+        <!-- Content -->
+        <div id="content">
+            <!-- Products -->
+            <div class="products">
+                @RenderBody()
+            </div>
+            
+            <div class="cl">&nbsp;</div>
+        </div>
+        <!-- End Content -->
+        <div class="cl">&nbsp;</div>
+    </div>
+    <!-- End Main -->
+    <!-- Footer -->
+    <div id="footer" class="shell">
+        <div class="top">
+            <div class="cnt">
+                <div class="col store">
+                    <h4>Store</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">Log In</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Basket</a></li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </div>
+                <div class="cl">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
